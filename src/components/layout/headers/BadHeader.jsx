@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { User, Search } from 'lucide-react';
 
 export const BadHeader = () => {
     const [adClosed, setAdClosed] = useState(false);
@@ -11,12 +12,18 @@ export const BadHeader = () => {
             </marquee>
 
             <div className="flex flex-row-reverse flex-wrap items-end justify-between p-2 h-40">
-
+            <div>
+                <ul>
+                    <li><Link to="/mission-1"><User/></Link></li>
+                    <li><Link to="/mission-1"><Search/></Link></li>
+                </ul>
                 <div className="transform rotate-12 translate-y-4 hover:rotate-180 transition-all duration-1000 cursor-wait">
                     <h1 className="text-4xl font-extrabold text-blue-800 bg-red-500 p-2 border-4 border-dotted border-lime-400 select-none shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
                         UsEr<br/>NiGhT<br/>MaRe
                     </h1>
                 </div>
+            </div>
+
                 {!adClosed && (
                     <div className="absolute top-10 left-1/3 bg-white border-2 border-black p-4 shadow-xl z-50 animate-bounce">
                         <p className="text-xs text-red-600 font-bold">Abonnez-vous !</p>
@@ -36,6 +43,12 @@ export const BadHeader = () => {
                     <Link to="/mission-1" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
                         Mission1(cliquezici)
                     </Link>
+                    <Link to="/mission-2" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
+                        Mission2(cliquezici)
+                    </Link>
+                    <Link to="/mission-3" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
+                        Mission3(cliquezici)
+                    </Link>
 
                     <button className="bg-gray-300 text-gray-300 border border-gray-300 mt-2 text-xs p-1" disabled>
                         Paramètres (Désactivé)
@@ -44,7 +57,6 @@ export const BadHeader = () => {
                         CONTACTEZ LE SUPPORT
                     </a>
                 </div>
-
             </div>
 
             <div className="bg-gradient-to-r from-red-500 via-green-500 to-blue-500 text-center text-white text-[8px] p-0.5 animate-pulse">
