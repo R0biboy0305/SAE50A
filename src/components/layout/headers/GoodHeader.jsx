@@ -1,21 +1,25 @@
 import {User, Search} from 'lucide-react';
 import logo from '../../../assets/user_nightmare_logo.jpg';
-import {Link} from "react-router-dom";
+import {GoodNavBtn} from "../../ui/btn/good-header-btn/GoodNavBtn.jsx";
 
 export const GoodHeader =() => {
     return (
         <header className={`bg-gray-200`}>
-            <nav className={`flex justify-between items-center px-[100px] py-8`}>
-                <img className={`h-auto w-[150px] rounded-2xl`} src={`${logo}`} alt='logo'/>
+            <div className="flex flex-col items-center w-full px-8 py-6">
+            <nav className={`flex justify-between items-center w-full`}>
                 <ul className={`flex gap-5`}>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={`/`}>Accueil</Link></li>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={`/mission-1`}>Mission 1</Link></li>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={``}>Mission 2</Link></li>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={``}>Mission 3</Link></li>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={`#`}><User/></Link></li>
-                    <li className={`hover:bg-gray-300 px-4 py-2 rounded-2xl duration-300 ease`}><Link to={`#`}><Search/></Link></li>
+                    <GoodNavBtn to={`/`}>Accueil</GoodNavBtn>
+                    <GoodNavBtn to={`/mission-1`}>Mission 1</GoodNavBtn>
+                    <GoodNavBtn to={`/mission-2`}>Mission 2</GoodNavBtn>
+                    <GoodNavBtn to={`/mission-3`}>Mission 3</GoodNavBtn>
+                </ul>
+                <ul className="flex gap-5">
+                    <GoodNavBtn to={`/search`}><Search/></GoodNavBtn>
+                    <GoodNavBtn to={`/user`}><User/></GoodNavBtn>
                 </ul>
             </nav>
+                <img className={`h-auto w-[150px]`} src={`${logo}`} alt='logo'/>
+            </div>
         </header>
     );
 }
