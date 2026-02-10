@@ -11,9 +11,8 @@ export const SwitchBtn = () => {
                 : 'bg-gray-300 text-gray-900'} 
                 transition-colors duration-300`}>
                 {isNightMare ?
-                    'Switch to Day Mode'
-                    : 'Switch to Night Mode'}
+                    'Switch to Good UX'
+                    : 'Switch to Nightmare'}
 </button>
     )
-
 }

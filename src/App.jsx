@@ -1,22 +1,25 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {GameProvider} from './context/GameContext.jsx';
 import {MainLayout} from './components/layout/MainLayout.jsx';
 import {Mission1} from "./pages/mission1/Mission1.jsx";
+import {HomePage} from "./pages/HomePage/HomePage.jsx";
+import {UserPage} from "./pages/UserPage/UserPage.jsx";
 
-const Home = () => <h1 className="text-4xl font-bold">Bienvenue (Page Accueil)</h1>;
 
 function App() {
     return (
-        <GameProvider>
-            <BrowserRouter>
+        <BrowserRouter>
+            <GameProvider>
                 <Routes>
-                    <Route path="/" element={<MainLayout />}>
-                        <Route index element={<Home />} />
-                        <Route path="/mission-1" element={<Mission1 />} />
+                    <Route path="/" element={<MainLayout/>}>
+                        <Route index element={<HomePage/>}/>
+                        <Route path="/mission-1" element={<Mission1/>}/>
+                        <Route path="/user" element={<UserPage/>}/>
                     </Route>
                 </Routes>
-            </BrowserRouter>
-        </GameProvider>
+            </GameProvider>
+        </BrowserRouter>
+
     )
 }
 

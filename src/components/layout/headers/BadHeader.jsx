@@ -14,7 +14,7 @@ export const BadHeader = () => {
             <div className="flex flex-row-reverse flex-wrap items-end justify-between p-2 h-40">
             <div>
                 <ul>
-                    <li><Link to="/mission-1"><User/></Link></li>
+                    <li><Link to="/user"><User/></Link></li>
                     <li><Link to="/mission-1"><Search/></Link></li>
                 </ul>
                 <div className="transform rotate-12 translate-y-4 hover:rotate-180 transition-all duration-1000 cursor-wait">
