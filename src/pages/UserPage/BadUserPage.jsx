@@ -6,7 +6,7 @@ export const BadUserPage = () => {
     const {user} = useGame();
 
     return (
-        <div>
+        <div className="bg-gradient-to-b from-yellow-400 to-red-500">
             {user ? <BadProfile/> : <BadLogin/>}
         </div>
     )

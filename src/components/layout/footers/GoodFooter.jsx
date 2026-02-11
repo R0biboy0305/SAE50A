@@ -55,7 +55,7 @@ export const GoodFooter = () => {
                 <GoodFooterItem isNavLink>Politique de confidentialité</GoodFooterItem>
             </ul>
         </div>
-        <p className="text-xs mt-2 opacity-50">&copy; 2024 Good Footer. All rights reserved.</p>
+        <p className="text-xs mt-2 opacity-50">&copy; 2026 Good Footer. All rights reserved.</p>
     </footer>
 )
 }

@@ -1,22 +1,22 @@
 import { useGame } from "../../../context/GameContext.jsx";
 import { LogOut, Skull, AlertTriangle, BadgeCent, Frown } from "lucide-react";
 import { useState } from "react";
+import {BadProfileMenu} from "./BadProfileMenu.jsx";
 
 export const BadProfile = () => {
     const { user, logout } = useGame();
     const [adClosed, setAdClosed] = useState(false);
 
     const handleLogout = () => {
-        const confirm = window.confirm("Êtes-vous sûr de vouloir abandonner votre famille User Nightmare ? 😢");
+        const confirm = window.confirm("Êtes-vous sûr de vouloir abandonner User Nightmare ? 😢");
         if (confirm) {
-            alert("Erreur 503 : Impossible de partir. Le serveur est triste.");
+            alert("Erreur 503 : Impossible de partir.");
             setTimeout(logout, 2000);
         }
     };
 
     return (
         <div className="relative w-full max-w-2xl mx-auto bg-yellow-100 border-8 border-dashed border-red-500 p-2 overflow-hidden font-mono">
-
             {!adClosed && (
                 <div className="absolute inset-0 z-50 bg-black/90 flex flex-col items-center justify-center p-4 text-center animate-pulse">
                     <h2 className="text-4xl text-green-500 font-bold mb-4">FELICITATIONS !!!</h2>
@@ -29,6 +29,7 @@ export const BadProfile = () => {
                     </button>
                 </div>
             )}
+            <BadProfileMenu/>
 
             <div className="bg-gradient-to-r from-blue-500 via-pink-500 to-yellow-500 p-4 mb-8 transform -skew-y-3">
                 <div className="flex items-center gap-4">
@@ -114,7 +115,7 @@ export const BadProfile = () => {
                 </button>
             </div>
 
-            <div className="fixed bottom-10 right-10 animate-bounce pointer-events-none">
+            <div className="fixed bottom-10 right-10 animate-bounce pointer-events-none z-20">
                 <span className="bg-yellow-300 text-black px-2 py-1 rounded shadow-lg text-xs font-bold -rotate-12 block">
                     Besoin d'aide ? <br/> Appelez le 08 99... (3€/min)
                 </span>

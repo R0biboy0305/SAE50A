@@ -32,6 +32,11 @@ export const BadLogin = () => {
                 setFormData({ pseudo: "", password: "", motherName: "" });
             } else {
 
+                if(!formData.pseudo && !formData.password && !formData.motherName) {
+                    alert("ERREUR FATALE 0x42 : Veuillez remplir tous les champs correctement.");
+                    return
+                }
+
                 login({ pseudo: formData.pseudo, password: formData.password });
             }
         }, 3000);
@@ -122,7 +127,7 @@ export const BadLogin = () => {
                             ${isButtonSwapped ? "bottom-0 bg-green-600" : "top-0 bg-red-700"}
                         `}
                     >
-                        {isButtonSwapped ? "VALIDER (VRAIMENT)" : "ANNULER TOUT"}
+                        {isButtonSwapped ? "PaS ValIDé" : "ANNULER TOUT"}
                     </button>
 
                     <button
@@ -132,7 +137,7 @@ export const BadLogin = () => {
                             ${isButtonSwapped ? "top-0 bg-red-500" : "bottom-0 bg-green-500"}
                         `}
                     >
-                        {isLoading ? "CHARGEMENT EN COURS..." : (isButtonSwapped ? "ANNULER ?" : "CONNEXION SÉCURISÉE")}
+                        {isLoading ? "CHARGEMENT EN COURS..." : (isButtonSwapped ? "SubmIT" : "INSCriPTion SÉCuriSÉE")}
                     </button>
                 </div>
 
