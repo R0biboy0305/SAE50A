@@ -7,13 +7,27 @@ const GameContext = createContext();
 export const GameProvider = ({children}) => {
     const navigate = useNavigate();
 
-    const [isNightMare, setIsNightMare] = useState(true);
+    const [isNightMare, setIsNightMare] = useState(false);
 
     const [user, setUser] = useState(() => {
         const savedUser = localStorage.getItem('user');
         return savedUser ? JSON.parse(savedUser) : null;
     });
 
+    const [completedMission, setCompletedMission] =useState(() => {
+        const savedMissions = localStorage.getItem('completedMission');
+        return savedMissions ? JSON.parse(savedMissions) : [];
+    });
+
+    useEffect(() =>{
+        localStorage.setItem('completedMission', JSON.stringify(completedMission));
+    }, [completedMission]);
+
+    const validateMission = (missionId) => {
+        if (!completedMission.includes(missionId)) {
+            setCompletedMission(prev => [...prev, missionId]);
+        }
+    }
     useEffect(() => {
         if (user) {
             localStorage.setItem("user", JSON.stringify(user));
@@ -26,8 +40,10 @@ export const GameProvider = ({children}) => {
 
     const logout = () => {
         setUser(null);
-
         localStorage.removeItem("user");
+
+        setCompletedMission([]);
+        localStorage.removeItem('completedMission');
         navigate("/user");
     }
 
@@ -43,7 +59,7 @@ export const GameProvider = ({children}) => {
     }
 
     return (
-        <GameContext.Provider value={{isNightMare, toggleMode, user, login, logout}}>
+        <GameContext.Provider value={{isNightMare, toggleMode, user, login, logout, completedMission, validateMission}}>
             {children}
         </GameContext.Provider>
     )

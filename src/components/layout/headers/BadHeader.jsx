@@ -40,14 +40,11 @@ export const BadHeader = () => {
                     <Link to="/" className="text-[10px] text-gray-400 bg-gray-200 underline decoration-wavy decoration-red-500 hover:cursor-none">
                         Aller à la maison
                     </Link>
-                    <Link to="/mission-1" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
+                    <Link to="/#badMission1" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
                         Mission1(cliquezici)
                     </Link>
-                    <Link to="/mission-2" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
+                    <Link to="/#badMission2" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
                         Mission2(cliquezici)
-                    </Link>
-                    <Link to="/mission-3" className="text-black font-thin text-xl tracking-tighter hover:text-white cursor-help">
-                        Mission3(cliquezici)
                     </Link>
 
                     <button className="bg-gray-300 text-gray-300 border border-gray-300 mt-2 text-xs p-1" disabled>

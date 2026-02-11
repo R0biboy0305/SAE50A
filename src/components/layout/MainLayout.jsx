@@ -15,7 +15,7 @@ export const MainLayout = () => {
             ? 'bg-gray-900 text-white' 
             : 'text-gray-900 bg-gradient-to-b from-white to-gray-200 duration-500 ease'}`}>
             {isNightMare ? <BadHeader /> : <GoodHeader />}
-            <main className="container mx-auto px-4 py-8 flex-grow">
+            <main className=" w-full mx-auto px-4 py-8 flex-grow">
                 <Outlet />
             </main>
             <SwitchBtn isNightMare={isNightMare} toggleMode={toggleMode} />

@@ -5,6 +5,8 @@ import { Eye, Trash2, Siren, Skull } from "lucide-react";
 export const BadLogin = () => {
     const { login } = useGame();
 
+    const validateMission = useGame().validateMission;
+
     const [isButtonSwapped, setIsButtonSwapped] = useState(false);
 
     const [formData, setFormData] = useState({ pseudo: "", password: "", motherName: "" });
@@ -36,7 +38,7 @@ export const BadLogin = () => {
                     alert("ERREUR FATALE 0x42 : Veuillez remplir tous les champs correctement.");
                     return
                 }
-
+                validateMission(1);
                 login({ pseudo: formData.pseudo, password: formData.password });
             }
         }, 3000);

@@ -1,8 +1,15 @@
 import { useState } from "react";
 import { AlertTriangle, X, Skull } from "lucide-react";
+import { useGame } from "../../context/GameContext";
 
 export const BadHomePage = () => {
         const [showPopup, setShowPopup] = useState(true);
+
+        const {completedMission} = useGame();
+
+        const isMissionCompleted1 = completedMission?.includes(1)
+        const isMissionCompleted2 = completedMission?.includes(2)
+        const isMissionCompleted3 = completedMission?.includes(3)
 
         return (
             <div className="bg-yellow-200 min-h-screen overflow-x-hidden font-serif cursor-help relative">
@@ -57,14 +64,22 @@ export const BadHomePage = () => {
 
                             <ul className="list-decimal marker:text-red-500 space-y-0">
 
-                                    <li className="bg-green-300 p-8 border-b-8 border-red-500 text-right">
+                                    <li id="badMission1" className="bg-green-300 p-8 border-b-8 border-red-500 text-right relative">
+                                            {isMissionCompleted1 && (
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 rotate-12 border-4 border-blue-500 text-blue-500 font-black text-2xl p-2 opacity-50 z-10 pointer-events-none">
+                                                        VALIDATION ECHOUEE (SUCCESS)
+                                                </div>                                              )}
                                             <span className="text-xs text-gray-500 block">Priorité : Fible</span>
                                             <h3 className="text-xl font-serif italic">1. Formulaire A-38</h3>
                                             <p className="text-white mix-blend-difference">Essayez de créer un compte (Bonne chance lol)</p>
                                     </li>
 
-                                    <li className="bg-purple-600 text-yellow-300 p-2 text-center font-bold tracking-[1em]">
+                                    <li id="badMission2" className="bg-purple-600 text-yellow-300 p-2 text-center font-bold tracking-[1em]">
                                             2.NEWSLETTER
+                                            {isMissionCompleted1 && (
+                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[50px] -rotate-2 border-4 border-red-500 text-red-500 font-black text-2xl p-2 opacity-50 z-10 pointer-events-none">
+                                                        VALIDATION ECHOUEE (SUCCESS)
+                                                </div>                                            )}
                                             <p>Essayez de vous désinscrire de la NewsLetter</p>
                                             <p className="tracking-[1rem] font-light text-[8px]">Si vous arrivez a la trouver</p>
                                     </li>

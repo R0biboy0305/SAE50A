@@ -1,6 +1,10 @@
 import {GoodTaskList} from "../../components/ui/task-list/GoodTaskList.jsx";
+import {useGame} from "../../context/GameContext.jsx";
 
 export const GoodHomePage = () => {
+    const completedMission = useGame().completedMission;
+
+
     return (
         <div>
             <div className="flex flex-col gap-4 w-2/3 mx-auto">
@@ -17,9 +21,9 @@ export const GoodHomePage = () => {
             </div>
             <div className="w-2/3 mx-auto">
                 <h2>Voici vos missions : </h2>
-                <GoodTaskList MissionRanking={1} MissionDescription={"Créez-vous un compte"}/>
-                <GoodTaskList MissionRanking={2} MissionDescription={"Tentez de vous créer un compte client"}/>
-                <GoodTaskList MissionRanking={3} MissionDescription={"Tentez de faire qlq chose"}/>
+                <GoodTaskList id="mission1" MissionRanking={1} MissionDescription={"Créez-vous un compte"}/>
+                <GoodTaskList id="mission2" MissionRanking={2} MissionDescription={"Tentez de vous créer un compte client"}/>
+                <GoodTaskList id="mission3" MissionRanking={3} MissionDescription={"Tentez de faire qlq chose"}/>
             </div>
         </div>
     )

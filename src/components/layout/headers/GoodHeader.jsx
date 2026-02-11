@@ -12,9 +12,8 @@ export const GoodHeader =() => {
             <nav className={`flex justify-between items-center w-full`}>
                 <ul className={`flex gap-5`}>
                     <GoodNavBtn to={`/`}>Accueil</GoodNavBtn>
-                    <GoodNavBtn to={`/mission-1`}>Mission 1</GoodNavBtn>
-                    <GoodNavBtn to={`/mission-2`}>Mission 2</GoodNavBtn>
-                    <GoodNavBtn to={`/mission-3`}>Mission 3</GoodNavBtn>
+                    <GoodNavBtn to={`/#mission1`}>Mission 1</GoodNavBtn>
+                    <GoodNavBtn to={`/#mission2`}>Mission 2</GoodNavBtn>
                 </ul>
                 <ul className="flex gap-5">
                     <GoodNavBtn to={`/search`}><Search/></GoodNavBtn>

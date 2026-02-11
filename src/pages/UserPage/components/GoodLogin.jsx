@@ -6,6 +6,8 @@ import { GoodInput } from "./GoodInput";
 export const GoodLogin = () => {
     const { login } = useGame();
 
+    const validateMission = useGame().validateMission;
+
     const [formData, setFormData] = useState({ pseudo: "", password: "", confirmPassword: "" });
 
     const handleChange = (e) => {
@@ -19,6 +21,7 @@ export const GoodLogin = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         login({ pseudo: formData.pseudo, password: formData.password });
+        validateMission(1);
     }
 
     return (
