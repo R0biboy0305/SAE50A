@@ -1,10 +1,10 @@
 import {useGame} from "../../context/GameContext.jsx";
 import { Outlet } from 'react-router-dom';
-import {GoodHeader} from './headers/GoodHeader.jsx'
-import {BadHeader} from './headers/BadHeader.jsx'
-import {SwitchBtn} from '../ui/btn/switch-btn.jsx';
-import {BadFooter} from "./footers/BadFooter.jsx";
-import {GoodFooter} from "./footers/GoodFooter.jsx";
+import {GoodHeader} from './Header/GoodHeader.jsx'
+import {BadHeader} from './Header/BadHeader.jsx'
+import {SwitchBtn} from '../ui/Button/switch-btn.jsx';
+import {BadFooter} from "./Footer/BadFooter.jsx";
+import {GoodFooter} from "./Footer/GoodFooter.jsx";
 
 export const MainLayout = () => {
     const {isNightMare, toggleMode} = useGame();

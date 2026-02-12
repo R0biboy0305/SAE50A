@@ -1,5 +1,5 @@
 import {User, Search, UserCheck} from 'lucide-react';
-import {GoodNavBtn} from "../../ui/btn/good-header-btn/GoodNavBtn.jsx";
+import {GoodNavBtn} from "../../ui/Button/HeaderButton/GoodNavBtn.jsx";
 import {useGame} from "../../../context/GameContext.jsx";
 import {Link} from "react-router-dom";
 

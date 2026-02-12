@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, Sun, Mail, ChevronDown, User } from "lucide-react";
-import { ToggleBtn } from "../../../components/ui/btn/ToggleBtn.jsx";
+import { ToggleBtn } from "../../../components/ui/Button/ToggleBtn.jsx";
 import { useGame } from "../../../context/GameContext.jsx";
 
 export const GoodProfileMenu = () => {

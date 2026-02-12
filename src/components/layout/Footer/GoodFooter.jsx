@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import logo from '../../../assets/user_nightmare_logo.jpg';
-import {GoodFooterItem} from '../../ui/footer-items-list/GoodFooterItemList.jsx';
+import {GoodFooterItem} from '../../ui/FooterItem/GoodFooterItemList.jsx';
 import {SiGithub, SiX, SiInstagram, SiReact, SiWebstorm, SiNpm} from '@icons-pack/react-simple-icons';
 
 

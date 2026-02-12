@@ -1,4 +1,4 @@
-﻿import { GoodTaskList } from "../../components/ui/task-list/GoodTaskList.jsx";
+﻿import { GoodTaskList } from "../../components/ui/TaskList/GoodTaskList.jsx";
 import { useGame } from "../../context/GameContext.jsx";
 import { Info, LayoutDashboard } from "lucide-react";
 export const GoodHomePage = () => {
