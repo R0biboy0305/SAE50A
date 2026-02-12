@@ -2,8 +2,11 @@
 import { useGame } from "../../context/GameContext.jsx";
 import { Info, LayoutDashboard } from "lucide-react";
 export const GoodHomePage = () => {
+
     const { completedMission } = useGame();
+
     const progress = Math.round((completedMission.length / 3) * 100);
+
     return (
         <div className="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 font-sans text-gray-800">
             <div className="max-w-4xl mx-auto space-y-10">
@@ -21,10 +24,10 @@ export const GoodHomePage = () => {
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
                     <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                         <LayoutDashboard className="text-blue-500"/>
-                        Bienvenue dans l experience
+                        Bienvenue dans l'experience
                     </h2>
                     <p className="text-gray-600 leading-7 mb-6">
-                        User Nightmare est concu pour decrypter les mecanismes de frustration que subissent les utilisateurs au quotidien.
+                        User Nightmare est concu pour decrypter les mécanismes de frustration que subissent les utilisateurs au quotidien.
                     </p>
                     <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg flex gap-4 items-start">
                         <Info className="text-blue-600 flex-shrink-0 mt-1" />

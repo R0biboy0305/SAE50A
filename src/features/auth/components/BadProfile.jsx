@@ -70,9 +70,9 @@ export const BadProfile = () => {
 
                 <div className="col-span-2 bg-blue-900 p-8 text-center text-blue-800">
                     <p className="bg-blue-900 select-none">
-                        {user?.email || "email@caché.com"}
+                        {user?.motherName || "Nemo"}
                     </p>
-                    <p className="text-white text-xs mt-2">(Surlignez le texte bleu sur fond bleu pour voir votre email)</p>
+                    <p className="text-white text-xs mt-2">(Surlignez le texte bleu sur fond bleu pour voir le nom de jeune fille de votre possion rouge)</p>
                 </div>
 
             </div>
@@ -99,8 +99,7 @@ export const BadProfile = () => {
             <div className="flex justify-between items-end">
                 <button
                     onClick={handleLogout}
-                    className="bg-gray-300 text-gray-400 text-[8px] p-1 hover:bg-red-600 hover:text-white transition-all duration-1000 flex items-center gap-1"
-                >
+                    className="bg-gray-300 text-gray-400 text-[8px] p-1 hover:bg-red-600 hover:text-white transition-all duration-1000 flex items-center gap-1">
                     <LogOut size={8} />
                     <span className="hidden hover:inline">Partir (si vous osez)</span>
                 </button>

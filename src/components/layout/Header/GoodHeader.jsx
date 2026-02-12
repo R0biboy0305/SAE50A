@@ -2,8 +2,13 @@ import {User, Search, UserCheck} from 'lucide-react';
 import {GoodNavBtn} from "../../ui/Button/HeaderButton/GoodNavBtn.jsx";
 import {useGame} from "../../../context/GameContext.jsx";
 import {Link} from "react-router-dom";
+import {SearchButton} from "../../ui/Button/SearchButton.jsx";
+import {useState} from "react";
 
 export const GoodHeader =() => {
+
+    const [isSearching, setIsSearching] = useState(false);
+
     const {user} = useGame();
 
     return (
@@ -21,7 +26,7 @@ export const GoodHeader =() => {
                     <GoodNavBtn to={`/`}>Accueil</GoodNavBtn>
                     <GoodNavBtn to={`/#mission1`}>Mission 1</GoodNavBtn>
                     <GoodNavBtn to={`/#mission2`}>Mission 2</GoodNavBtn>
-                    <GoodNavBtn to={`/search`}><Search color={'white'} size={22}/></GoodNavBtn>
+                    <GoodNavBtn to={`#`} onClick={() => setIsSearching(!isSearching)}><SearchButton isSearch={isSearching}/></GoodNavBtn>
                     <GoodNavBtn to={`/user`}>{user ? <UserCheck color={'white'} size={22}/> : <User/>}</GoodNavBtn>
                 </ul>
             </nav>

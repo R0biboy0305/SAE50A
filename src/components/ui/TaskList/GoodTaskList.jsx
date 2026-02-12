@@ -19,8 +19,7 @@ export const GoodTaskList = ({ MissionRanking, MissionDescription, title }) => {
                 : "bg-white border-gray-200 hover:border-blue-300" 
             }
             `}
-            onClick={() => setIsOpen(!isOpen)}
-        >
+            onClick={() => setIsOpen(!isOpen)}>
             <div className="flex items-center justify-between p-5">
 
                 <div className="flex items-center gap-4">
@@ -37,7 +36,7 @@ export const GoodTaskList = ({ MissionRanking, MissionDescription, title }) => {
                         </h3>
                         <p className="text-xs font-medium uppercase tracking-wider mt-0.5">
                             {isCompleted
-                                ? <span className="text-green-600">Compiétée</span>
+                                ? <span className="text-green-600">Complétée</span>
                                 : <span className="text-gray-400">À faire</span>
                             }
                         </p>

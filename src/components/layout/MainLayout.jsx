@@ -2,7 +2,7 @@ import {useGame} from "../../context/GameContext.jsx";
 import { Outlet } from 'react-router-dom';
 import {GoodHeader} from './Header/GoodHeader.jsx'
 import {BadHeader} from './Header/BadHeader.jsx'
-import {SwitchBtn} from '../ui/Button/switch-btn.jsx';
+import {SwitchButton} from '../ui/Button/SwitchButton.jsx';
 import {BadFooter} from "./Footer/BadFooter.jsx";
 import {GoodFooter} from "./Footer/GoodFooter.jsx";
 
@@ -18,7 +18,7 @@ export const MainLayout = () => {
             <main className=" w-full mx-auto px-4 py-8 flex-grow">
                 <Outlet />
             </main>
-            <SwitchBtn isNightMare={isNightMare} toggleMode={toggleMode} />
+            <SwitchButton isNightMare={isNightMare} toggleMode={toggleMode} />
             {isNightMare ? <BadFooter /> : <GoodFooter />}
         </div>
     );

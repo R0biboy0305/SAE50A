@@ -5,7 +5,7 @@ import {HomePage} from "./pages/Home/HomePage.jsx";
 import {UserPage} from "./pages/User/UserPage.jsx";
 import {BadNewsletter} from "./pages/Newsletter/BadNewsletter.jsx";
 import {ScrollToAnchor} from "./utils/ScrollToAnchor.jsx";
-
+import {ErrorPage} from "./pages/Error/Error.jsx";
 
 function App() {
     return (
@@ -17,6 +17,7 @@ function App() {
                         <Route index element={<HomePage/>}/>
                         <Route path="/mission-2" element={<BadNewsletter/>}/>
                         <Route path="/user" element={<UserPage/>}/>
+                        <Route path="/error" element={<ErrorPage/>}/>
                     </Route>
                 </Routes>
             </GameProvider>

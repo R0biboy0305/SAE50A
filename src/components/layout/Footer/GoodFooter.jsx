@@ -2,9 +2,12 @@ import {Link} from 'react-router-dom';
 import logo from '../../../assets/user_nightmare_logo.jpg';
 import {GoodFooterItem} from '../../ui/FooterItem/GoodFooterItemList.jsx';
 import {SiGithub, SiX, SiInstagram, SiReact, SiWebstorm, SiNpm} from '@icons-pack/react-simple-icons';
-
+import {useGame} from "../../../context/GameContext.jsx";
 
 export const GoodFooter = () => {
+
+    const {user} = useGame();
+
     return (<footer
         className="bg-blue-600 text-center py-[20px] px-[50px] mt-8 bottom-0 flex flex-col items-center justify-between">
         <div className="flex gap-8 items-start">
@@ -47,7 +50,7 @@ export const GoodFooter = () => {
 
                     <ul className="flex flex-col items-start text-left max-w-xs">
                         <span className="font-bold mb-2 text-white">Newsletter</span>
-                        <GoodFooterItem to={`/newsletter`}>Gérer mon abonnement a la Newsletter</GoodFooterItem>
+                        <GoodFooterItem to={`/user`}>{user ? 'Gérer mon abonnement a la Newsletter' : 'Connectez ou inscrivez vous pour accéder a la newsletter'}</GoodFooterItem>
                     </ul>
                 </div>
             </div>

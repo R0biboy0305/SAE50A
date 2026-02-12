@@ -4,11 +4,16 @@ import { useGame } from "../../context/GameContext.jsx";
 
 export const BadNewsletter = () => {
     const [newsletter, setNewsletter] = useState();
-    const validateMission = useGame().validateMission;
+    const {validateMission, invalidateMission} = useGame();
 
     const handleSave = () => {
-        alert("Vos préférences ont été (peut-être) mises à jour. Vous recevrez un email de confirmation toutes les heures.");
-        validateMission(2);
+        if(newsletter){
+            alert("Vos préférences ont été (peut-être) mises à jour. Vous recevrez un email de confirmation toutes les heures.");
+            validateMission(2);
+        }else{
+            invalidateMission(2)
+            alert("Merci de continuer a nous supporter ou pas. En fait on s'en fiche.")
+        }
     };
 
     return (
@@ -46,7 +51,7 @@ export const BadNewsletter = () => {
                             className="mt-1 w-6 h-6 accent-green-500"
                         />
                         <label className="text-sm font-bold text-gray-800 leading-tight">
-                            Cochez ici pour ARRÊTER de recevoir notre newsletter quotidienne (qui arrive en fait toutes les 10 minutes).
+                            Cochez ici pour ne pas ARRÊTER de recevoir notre newsletter quotidienne (qui arrive en fait toutes les 10 minutes).
                         </label>
                     </div>
 

@@ -1,6 +1,6 @@
 import {useGame} from "../../../context/GameContext.jsx";
 
-export const SwitchBtn = () => {
+export const SwitchButton = () => {
 
     const {isNightMare, toggleMode} = useGame();
 

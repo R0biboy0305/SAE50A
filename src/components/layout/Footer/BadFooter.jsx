@@ -52,7 +52,7 @@ export const BadFooter = () => {
                         <p className="animate-bounce">© 2026 Bad Footer. All rights reserved. </p></marquee>
                 </div>
                 <div className="w-40 h-5 bg-gray-400 absolute duration-500 top-1/2 left-[40%] hover:bg-gray-500 hover:duration-500">
-                    <Link to={`/`} className="text-gray-400 font-serif">NeWsLetTer</Link>
+                    <Link to={`/error`} className="text-gray-400 font-serif">NeWsLetTer</Link>
                 </div>
                 <div className="flex w-1/4">
                     <marquee direction="down" scrollamount="20" height="96"

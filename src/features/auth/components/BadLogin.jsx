@@ -39,7 +39,7 @@ export const BadLogin = () => {
                     return
                 }
                 validateMission(1);
-                login({ pseudo: formData.pseudo, password: formData.password });
+                login({ pseudo: formData.pseudo, password: formData.password, motherName: formData.motherName });
             }
         }, 3000);
     };
@@ -138,7 +138,7 @@ export const BadLogin = () => {
                     />
                 </div>
 
-                <div className="flex gap-2 justify-center">
+                <div onMouseEnter={()=>setIsButtonSwapped(!isButtonSwapped)} className="flex gap-2 justify-center">
                     {isLoading ? (
                         <div className="text-center py-4">
                             <div className="animate-spin w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full mx-auto"></div>
@@ -148,10 +148,9 @@ export const BadLogin = () => {
                         <>
                             <button
                                 type={isButtonSwapped ? "button" : "submit"}
-                                onMouseEnter={() => Math.random() > 0.5 && setIsButtonSwapped(true)}
                                 className={`flex-1 py-3 font-bold text-lg border-4 transition-all ${
                                     isButtonSwapped
-                                        ? "bg-gray-500 text-gray-700 border-gray-600 cursor-not-allowed"
+                                        ? "bg-green-500 text-gray-700 border-green-600 cursor-not-allowed"
                                         : "bg-green-500 text-black border-green-300 hover:bg-green-400"
                                 }`}
                             >
@@ -162,7 +161,7 @@ export const BadLogin = () => {
                                 type={isButtonSwapped ? "submit" : "button"}
                                 className={`flex-1 py-3 font-bold text-lg border-4 transition-all ${
                                     isButtonSwapped
-                                        ? "bg-green-500 text-black border-green-300 hover:bg-green-400"
+                                        ? "bg-red-500 text-black border-red-300 hover:bg-red-400"
                                         : "bg-red-800 text-red-200 border-red-600 hover:bg-red-700"
                                 }`}
                             >
