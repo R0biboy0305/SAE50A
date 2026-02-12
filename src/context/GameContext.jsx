@@ -8,6 +8,7 @@ export const GameProvider = ({children}) => {
     const navigate = useNavigate();
 
     const [isNightMare, setIsNightMare] = useState(false);
+    const [newsletterSubscribed, setNewsletterSubscribed] = useState(true);
 
     const [user, setUser] = useState(() => {
         const savedUser = localStorage.getItem('user');
@@ -27,6 +28,10 @@ export const GameProvider = ({children}) => {
         if (!completedMission.includes(missionId)) {
             setCompletedMission(prev => [...prev, missionId]);
         }
+    }
+
+    const invalidateMission = (missionId) => {
+        setCompletedMission(prev => prev.filter(id => id !== missionId));
     }
     useEffect(() => {
         if (user) {
@@ -59,7 +64,16 @@ export const GameProvider = ({children}) => {
     }
 
     return (
-        <GameContext.Provider value={{isNightMare, toggleMode, user, login, logout, completedMission, validateMission}}>
+        <GameContext.Provider value={{
+            isNightMare,
+            toggleMode,
+            user, login,
+            logout,
+            completedMission,
+            invalidateMission,
+            validateMission,
+            newsletterSubscribed,
+            setNewsletterSubscribed}}>
             {children}
         </GameContext.Provider>
     )

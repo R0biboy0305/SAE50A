@@ -18,3 +18,4 @@ export const ScrollToAnchor = () => {
     }, [location]);
     return null;
 };
+

@@ -1,7 +1,7 @@
 import { useGame } from "../../../context/GameContext.jsx";
 import { LogOut, Skull, AlertTriangle, BadgeCent, Frown } from "lucide-react";
 import { useState } from "react";
-import {BadProfileMenu} from "./BadProfileMenu.jsx";
+import { BadProfileMenu } from "./BadProfileMenu.jsx";
 
 export const BadProfile = () => {
     const { user, logout } = useGame();
@@ -97,30 +97,20 @@ export const BadProfile = () => {
             </div>
 
             <div className="flex justify-between items-end">
-
-                <div className="text-[10px] text-gray-400 w-1/2">
-                    Publicité : <a href="#" className="underline text-blue-600">Comment perdre 10kg en mangeant du gras ?</a>
-                </div>
-
                 <button
                     onClick={handleLogout}
-                    className="group relative bg-gray-200 text-gray-400 px-2 py-1 text-xs hover:bg-red-100 hover:text-red-500 transition-colors"
+                    className="bg-gray-300 text-gray-400 text-[8px] p-1 hover:bg-red-600 hover:text-white transition-all duration-1000 flex items-center gap-1"
                 >
-                    <span className="flex items-center gap-1 group-hover:hidden">
-                        <LogOut size={12} /> Déconnexion
-                    </span>
-                    <span className="hidden group-hover:flex items-center gap-1 font-bold">
-                        <Frown size={12} /> Tu nous quittes ? 😭
-                    </span>
+                    <LogOut size={8} />
+                    <span className="hidden hover:inline">Partir (si vous osez)</span>
                 </button>
-            </div>
 
-            <div className="fixed bottom-10 right-10 animate-bounce pointer-events-none z-20">
-                <span className="bg-yellow-300 text-black px-2 py-1 rounded shadow-lg text-xs font-bold -rotate-12 block">
-                    Besoin d'aide ? <br/> Appelez le 08 99... (3€/min)
-                </span>
+                <div className="text-right">
+                    <Frown size={32} className="text-gray-400 animate-bounce" />
+                    <p className="text-[8px] text-gray-500">Mascotte Triste™</p>
+                </div>
             </div>
-
         </div>
     );
 };
+

@@ -1,19 +1,30 @@
 import { useState } from "react";
 import { Menu, Sun, Mail, ChevronDown, User } from "lucide-react";
 import { ToggleBtn } from "../../../components/ui/btn/ToggleBtn.jsx";
+import { useGame } from "../../../context/GameContext.jsx";
 
 export const GoodProfileMenu = () => {
 
+    const {newsletterSubscribed = true, setNewsletterSubscribed, validateMission, invalidateMission} = useGame();
+
     const [showMenu, setShowMenu] = useState(false);
-
-
 
     const [openSubMenus, setOpenSubMenus] = useState({
         apparence: false,
         preferences: false
     });
 
+    const handleNewsletterToggle = () => {
+        const newState = !newsletterSubscribed;
 
+        setNewsletterSubscribed(newState);
+
+        if (newState === false){
+            validateMission(2);
+        }else{
+            invalidateMission(2);
+        }
+    }
 
     const toggleSubMenu = (menuName) => {
         setOpenSubMenus(prev => ({
@@ -68,7 +79,7 @@ export const GoodProfileMenu = () => {
                                         <p className="font-medium text-gray-700">Newsletter</p>
                                         <p className="text-xs text-gray-500">Recevoir les actus</p>
                                     </div>
-                                    <ToggleBtn />
+                                    <ToggleBtn  isOn={newsletterSubscribed} onToggle={handleNewsletterToggle}/>
                                 </div>
                             </div>
                         )}
@@ -79,3 +90,4 @@ export const GoodProfileMenu = () => {
         </div>
     )
 }
+

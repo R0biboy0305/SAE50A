@@ -1,10 +1,10 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {GameProvider} from './context/GameContext.jsx';
 import {MainLayout} from './components/layout/MainLayout.jsx';
-import {HomePage} from "./pages/HomePage/HomePage.jsx";
-import {UserPage} from "./pages/UserPage/UserPage.jsx";
+import {HomePage} from "./pages/Home/HomePage.jsx";
+import {UserPage} from "./pages/User/UserPage.jsx";
 import {BadNewsletter} from "./pages/Newsletter/BadNewsletter.jsx";
-import {ScrollToAnchor} from "./components/utils/ScrollToAnchor.jsx";
+import {ScrollToAnchor} from "./utils/ScrollToAnchor.jsx";
 
 
 function App() {

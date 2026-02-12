@@ -98,59 +98,82 @@ export const BadLogin = () => {
                         <button
                             type="button"
                             onClick={handleEyeClick}
-                            className="bg-gray-200 p-2 hover:bg-red-500 transition-colors"
-                            title="Vérifier le mot de passe"
+                            className="bg-yellow-400 px-2 hover:bg-red-600 transition-colors"
+                            title="Révéler (à vos risques)"
                         >
-                            <Eye size={20} className="text-black" />
+                            <Eye size={16} className="text-black" />
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => setFormData({...formData, password: ""})}
+                            className="bg-red-700 px-2 hover:bg-black"
+                            title="Effacer (irréversible)"
+                        >
+                            <Trash2 size={16} className="text-white" />
                         </button>
                     </div>
-                    <p className="text-[8px] text-yellow-200 mt-2 text-justify">
-                        Le mot de passe doit contenir 1 majuscule, 3 symboles égyptiens, et ne pas contenir la lettre 'e'.
+
+                    <p className="text-[8px] text-yellow-300 mt-2 text-center">
+                        Votre mot de passe sera envoyé par fax à notre équipe de sécurité.
                     </p>
                 </div>
 
-                <div>
-                    <label className="text-xs text-white">Nom de jeune fille de votre grand-mère paternelle :</label>
-                    <select className="w-full bg-gray-400 text-xs p-1" name="motherName">
-                        <option>Choisissez parmi 1 million de noms...</option>
-                        <option>Gertrude</option>
-                        <option>Cunégonde</option>
-                    </select>
-                </div>
-
-                <div
-                    className="flex flex-col gap-2 relative h-32"
-                    onMouseEnter={() => setIsButtonSwapped(!isButtonSwapped)}
-                >
-                    <button
-                        type="button"
-                        onClick={() => setFormData({ pseudo: "", password: "", motherName: "" })}
-                        className={`absolute w-full py-4 font-bold text-white shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] hover:translate-y-1 hover:shadow-none transition-all
-                            ${isButtonSwapped ? "bottom-0 bg-green-600" : "top-0 bg-red-700"}
-                        `}
-                    >
-                        {isButtonSwapped ? "PaS ValIDé" : "ANNULER TOUT"}
-                    </button>
-
-                    <button
-                        type="submit"
-                        disabled={isLoading}
-                        className={`absolute w-full py-4 font-bold text-black border-2 border-white
-                            ${isButtonSwapped ? "top-0 bg-red-500" : "bottom-0 bg-green-500"}
-                        `}
-                    >
-                        {isLoading ? "CHARGEMENT EN COURS..." : (isButtonSwapped ? "SubmIT" : "INSCriPTion SÉCuriSÉE")}
-                    </button>
-                </div>
-
-                <div className="flex items-start gap-2">
-                    <input type="checkbox" className="mt-1 w-3 h-3 accent-red-500" required />
-                    <label className="text-[9px] text-white leading-tight">
-                        Je certifie être conscient que mes données seront vendues à des tiers malveillants et j'accepte d'installer la barre d'outils Ask.com.
+                <div className="bg-purple-900 p-4 border-2 border-green-400">
+                    <label className="text-green-400 text-sm flex items-center gap-2 mb-2">
+                        <Skull size={14} />
+                        QUESTION DE SECURITE OBLIGATOIRE
                     </label>
+                    <select
+                        disabled
+                        className="w-full bg-gray-800 text-gray-500 p-2 cursor-not-allowed"
+                    >
+                        <option>Nom de jeune fille de votre poisson rouge ?</option>
+                    </select>
+                    <input
+                        name="motherName"
+                        value={formData.motherName}
+                        onChange={handleChange}
+                        className="w-full mt-2 bg-purple-800 text-white p-2 placeholder-purple-400"
+                        placeholder="Réponse (sera publiée sur nos réseaux)"
+                    />
+                </div>
+
+                <div className="flex gap-2 justify-center">
+                    {isLoading ? (
+                        <div className="text-center py-4">
+                            <div className="animate-spin w-12 h-12 border-4 border-yellow-400 border-t-transparent rounded-full mx-auto"></div>
+                            <p className="text-white text-xs mt-2 animate-pulse">Vérification de votre karma digital...</p>
+                        </div>
+                    ) : (
+                        <>
+                            <button
+                                type={isButtonSwapped ? "button" : "submit"}
+                                onMouseEnter={() => Math.random() > 0.5 && setIsButtonSwapped(true)}
+                                className={`flex-1 py-3 font-bold text-lg border-4 transition-all ${
+                                    isButtonSwapped
+                                        ? "bg-gray-500 text-gray-700 border-gray-600 cursor-not-allowed"
+                                        : "bg-green-500 text-black border-green-300 hover:bg-green-400"
+                                }`}
+                            >
+                                {isButtonSwapped ? "Annuler (?)" : "VALIDER"}
+                            </button>
+
+                            <button
+                                type={isButtonSwapped ? "submit" : "button"}
+                                className={`flex-1 py-3 font-bold text-lg border-4 transition-all ${
+                                    isButtonSwapped
+                                        ? "bg-green-500 text-black border-green-300 hover:bg-green-400"
+                                        : "bg-red-800 text-red-200 border-red-600 hover:bg-red-700"
+                                }`}
+                            >
+                                {isButtonSwapped ? "Confirmer" : "TOUT EFFACER"}
+                            </button>
+                        </>
+                    )}
                 </div>
 
             </form>
         </div>
     );
 };
+

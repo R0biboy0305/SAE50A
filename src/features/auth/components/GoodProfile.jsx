@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useGame } from "../../../context/GameContext";
-import {GoodProfileMenu} from "./GoodProfileMenu";
+import { useGame } from "../../../context/GameContext.jsx";
+import { GoodProfileMenu } from "./GoodProfileMenu.jsx";
 
 import { User, Shield, Lock, LogOut, Eye, EyeOff, Trophy, Calendar } from "lucide-react";
 
@@ -97,11 +97,8 @@ export const GoodProfile = () => {
                     <LogOut size={20} />
                     Se déconnecter
                 </button>
-
-                <p className="text-center text-xs text-gray-400 mt-4">
-                    User ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}
-                </p>
             </div>
-            </div>
+        </div>
     );
 };
+

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useGame } from "../../../context/GameContext.jsx";
 import { User, Lock, AlertCircle } from "lucide-react";
-import { GoodInput } from "./GoodInput";
+import { GoodInput } from "./GoodInput.jsx";
 
 export const GoodLogin = () => {
     const { login } = useGame();
@@ -86,3 +86,4 @@ export const GoodLogin = () => {
         </div>
     );
 }
+
