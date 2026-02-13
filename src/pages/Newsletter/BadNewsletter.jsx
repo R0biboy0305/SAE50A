@@ -11,7 +11,7 @@ export const BadNewsletter = () => {
             alert("Vos préférences ont été (peut-être) mises à jour. Vous recevrez un email de confirmation toutes les heures.");
             validateMission(2);
         }else{
-            invalidateMission(2)
+            invalidateMission(2);
             alert("Merci de continuer a nous supporter ou pas. En fait on s'en fiche.")
         }
     };
