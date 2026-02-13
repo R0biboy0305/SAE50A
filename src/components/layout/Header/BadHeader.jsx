@@ -15,7 +15,7 @@ export const BadHeader = () => {
             <div>
                 <ul>
                     <li><Link to="/user"><User/></Link></li>
-                    <li><Link to="/mission-1"><Search/></Link></li>
+                    <li><Link to="/error"><Search/></Link></li>
                 </ul>
                 <div className="transform rotate-12 translate-y-4 hover:rotate-180 transition-all duration-1000 cursor-wait">
                     <h1 className="text-4xl font-extrabold text-blue-800 bg-red-500 p-2 border-4 border-dotted border-lime-400 select-none shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
