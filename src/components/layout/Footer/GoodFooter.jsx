@@ -37,9 +37,9 @@ export const GoodFooter = () => {
                     <ul className="flex flex-col items-start">
                         <span className="font-bold text-s mb-2 text-white">Navigation</span>
                         <GoodFooterItem to={`/`}>Accueil</GoodFooterItem>
-                        <GoodFooterItem to={`/mission-1`}>Mission 1</GoodFooterItem>
-                        <GoodFooterItem to={`/mission-2`}>Mission 2</GoodFooterItem>
-                        <GoodFooterItem to={`/mission-3`}>Mission 3</GoodFooterItem>
+                        <GoodFooterItem to={`/#mission1`}>Mission 1</GoodFooterItem>
+                        <GoodFooterItem to={`/#mission2`}>Mission 2</GoodFooterItem>
+                        <GoodFooterItem to={`/#mission3`}>Mission 3</GoodFooterItem>
                     </ul>
 
                     <ul className="flex flex-col items-start text-white">

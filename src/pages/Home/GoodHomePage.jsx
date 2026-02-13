@@ -18,7 +18,7 @@ export const GoodHomePage = () => {
                         User <span className="text-blue-600">Nightmare</span>
                     </h1>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                        Comprenez l importance d une bonne interface en vivant le pire.
+                        Comprenez l'importance d une bonne interface utilisateur en vivant le pire.
                     </p>
                 </div>
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
@@ -27,14 +27,14 @@ export const GoodHomePage = () => {
                         Bienvenue dans l'experience
                     </h2>
                     <p className="text-gray-600 leading-7 mb-6">
-                        User Nightmare est concu pour decrypter les mécanismes de frustration que subissent les utilisateurs au quotidien.
+                        User Nightmare est conçu pour decrypter les mécanismes de frustration que subissent les utilisateurs au quotidien.
                     </p>
                     <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg flex gap-4 items-start">
                         <Info className="text-blue-600 flex-shrink-0 mt-1" />
                         <div>
                             <p className="font-bold text-blue-900">Comment jouer ?</p>
                             <p className="text-blue-800 text-sm mt-1">
-                                Vous pouvez activer le mode Cauchemar a tout moment en cliquant sur le bouton Switch to Nightmare situe dans le menu en haut.
+                                Vous pouvez activer le mode Cauchemar a tout moment en cliquant sur le bouton Switch to Nightmare situé sur la droite de votre écran.
                             </p>
                         </div>
                     </div>
@@ -46,7 +46,7 @@ export const GoodHomePage = () => {
                             <p className="text-gray-500 text-sm">Completez les taches ci-dessous.</p>
                         </div>
                         <div className="text-right">
-                            <span className="text-sm font-bold text-blue-600">{progress}% Complete</span>
+                            <span className="text-sm font-bold text-blue-600">{progress}% Completé</span>
                             <div className="w-32 h-2 bg-gray-200 rounded-full mt-1 overflow-hidden">
                                 <div className="h-full bg-blue-600 transition-all duration-1000 ease-out" style={{ width: progress + '%' }}></div>
                             </div>
@@ -61,7 +61,7 @@ export const GoodHomePage = () => {
                             <GoodTaskList MissionRanking={1} title="Premiers Pas" MissionDescription="Rendez-vous sur la page de connexion et creez votre profil utilisateur avec un pseudo et un mot de passe valide." />
                         </div>
                         <div id="mission2" className="scroll-mt-32">
-                            <GoodTaskList MissionRanking={2} title="Gestion des Preferences" MissionDescription="Accedez a votre profil utilisateur et trouvez l option pour vous desinscrire de la newsletter envahissante." />
+                            <GoodTaskList MissionRanking={2} title="Gestion des Preferences" MissionDescription="Accedez a votre profil utilisateur et trouvez l'option pour vous desinscrire de la newsletter." />
                         </div>
                         <div id="mission3" className="scroll-mt-32">
                             <GoodTaskList MissionRanking={3} title="Exploration (Verrouille)" MissionDescription="Cette mission sera disponible prochainement dans la mise a jour 1.1." />
