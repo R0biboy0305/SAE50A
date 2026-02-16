@@ -1,16 +1,29 @@
 import {useState} from "react";
-import {Menu, Sun, Mail, ChevronDown, User} from "lucide-react";
+import {Menu, Sun, Mail, ChevronDown, User, LucideBadgeCheck} from "lucide-react";
 import {ToggleBtn} from "../../../components/ui/Button/ToggleBtn.jsx";
 import {useGame} from "../../../context/GameContext.jsx";
+import {GoodSubscribe} from "./GoodSubscribe.jsx";
 
 export const GoodProfileMenu = () => {
 
-    const {newsletterSubscribed, setNewsletterSubscribed, validateMission, invalidateMission} = useGame();
+    const {newsletterSubscribed, setNewsletterSubscribed, validateMission, invalidateMission, isPremium, setIsPremium} = useGame();
 
     const [openSubMenus, setOpenSubMenus] = useState({
         apparence: false,
-        preferences: false
+        preferences: false,
+        abonnements: false
     });
+
+    const handleSubscribe = () =>{
+        const newPremiumState = !isPremium;
+        setIsPremium(newPremiumState);
+
+        if(newPremiumState === true){
+            validateMission(3);
+        } else {
+            invalidateMission(3);
+        }
+    }
 
     const handleNewsletterToggle = () => {
         const newState = !newsletterSubscribed;
@@ -53,7 +66,7 @@ export const GoodProfileMenu = () => {
                 )}
             </div>
 
-            <div>
+            <div className="border-b border-gray-100">
                 <button
                     onClick={() => toggleSubMenu('preferences')}
                     className="w-full flex items-center justify-between p-4 hover:bg-blue-50 transition-colors">
@@ -76,6 +89,21 @@ export const GoodProfileMenu = () => {
                         </div>
                     </div>
                 )}
+            </div>
+
+            <div className="relative">
+                <button onClick={()=> toggleSubMenu('abonnements')}
+                        className="w-full flex items-center justify-between p-4 hover:bg-blue-50 transition-colors">
+                    <div className="flex items-center gap-3">
+                        <LucideBadgeCheck size={18} color={'blue'}></LucideBadgeCheck>
+                        <span className="font-medium text-gray-700">Abonnement</span>
+                    </div>
+                    <ChevronDown size={16}
+                                 className={`text-gray-400 transition-transform  ${openSubMenus.abonnements ? 'rotate-90' : '-rotate-90'}`}/>
+                </button>
+                    {openSubMenus.abonnements && (
+                        <GoodSubscribe isActive={isPremium} toggleSubscribe={handleSubscribe} onClose={()=>toggleSubMenu('abonnements')}/>
+                        )}
             </div>
 
         </div>

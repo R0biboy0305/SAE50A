@@ -9,6 +9,7 @@ export const GameProvider = ({children}) => {
 
     const [isNightMare, setIsNightMare] = useState(false);
     const [newsletterSubscribed, setNewsletterSubscribed] = useState(true);
+    const [isPremium, setIsPremium] = useState(false)
 
     const [user, setUser] = useState(() => {
         const savedUser = localStorage.getItem('user');
@@ -73,7 +74,9 @@ export const GameProvider = ({children}) => {
             invalidateMission,
             validateMission,
             newsletterSubscribed,
-            setNewsletterSubscribed}}>
+            setNewsletterSubscribed,
+            isPremium,
+            setIsPremium}}>
             {children}
         </GameContext.Provider>
     )
