@@ -86,13 +86,25 @@ export const BadHomePage = () => {
                         <p className="tracking-[1rem] font-light text-[8px]">Si vous arrivez a la trouver</p>
                     </li>
 
-                    <li className="bg-transparent p-4 relative h-20 overflow-hidden">
-                        <div className="absolute top-0 left-0 animate-spin">
-                            <Skull size={40} />
+                    <li id="badMission3" className="bg-yellow-400 text-blue-900 border-b-[12px] border-blue-900 p-4 text-center font-black tracking-widest relative overflow-hidden">
+
+                        <span className="text-xl">3. ABONNEMENT PREMIUM</span>
+
+                        {isMissionCompleted3 && (
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-[15deg] border-4 border-black text-black font-black text-3xl p-2 opacity-80 z-10 pointer-events-none drop-shadow-[5px_5px_0_rgba(255,0,0,1)] bg-white/90">
+                                RÉSILIATION FORCÉE
+                            </div>
+                        )}
+
+                        <div className={`mt-3 ${isMissionCompleted3 ? 'opacity-30' : ''}`}>
+                            <p className="tracking-normal font-serif italic text-sm leading-tight">
+                                Vous êtes prélevé de <strong className="text-red-600 text-lg">99,99€</strong> toutes les semaines.
+                            </p>
+
+                            <p className="tracking-[0.3em] text-[9px] uppercase mt-2 bg-blue-900 text-yellow-400 inline-block px-2 py-1">
+                                Trouvez comment annuler cet enfer.
+                            </p>
                         </div>
-                        <p className="ml-12 text-gray-600 line-through">
-                            3. Mission Annulée
-                        </p>
                     </li>
                 </ul>
             </div>

@@ -64,7 +64,7 @@ export const GoodHomePage = () => {
                             <GoodTaskList MissionRanking={2} title="Gestion des Preferences" MissionDescription="Accedez a votre profil utilisateur et trouvez l'option pour vous desinscrire de la newsletter." />
                         </div>
                         <div id="mission3" className="scroll-mt-32">
-                            <GoodTaskList MissionRanking={3} title="Gestion d'abonnement" MissionDescription="Accédez a votre profil utilisateur et passez a l'abonnement premium." />
+                            <GoodTaskList MissionRanking={3} title="Gestion d'abonnement" MissionDescription="Accédez a votre profil utilisateur et passez a l'abonnement standard." />
                         </div>
                     </div>
                 </div>

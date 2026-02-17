@@ -18,7 +18,7 @@ export const GoodProfileMenu = () => {
         const newPremiumState = !isPremium;
         setIsPremium(newPremiumState);
 
-        if(newPremiumState === true){
+        if(newPremiumState === false){
             validateMission(3);
         } else {
             invalidateMission(3);

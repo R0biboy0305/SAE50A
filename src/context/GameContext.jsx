@@ -9,7 +9,7 @@ export const GameProvider = ({children}) => {
 
     const [isNightMare, setIsNightMare] = useState(false);
     const [newsletterSubscribed, setNewsletterSubscribed] = useState(true);
-    const [isPremium, setIsPremium] = useState(false)
+    const [isPremium, setIsPremium] = useState(true)
 
     const [user, setUser] = useState(() => {
         const savedUser = localStorage.getItem('user');
